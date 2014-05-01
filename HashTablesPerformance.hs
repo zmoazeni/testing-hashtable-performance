@@ -77,7 +77,7 @@ hashtableCuckoo = do
   contents <- allLines
   keys     <- getKeys contents
 
-  let x = runST $ do h <- H.new :: ST s (HashTableC s String Int)
+  let x = runST $ do h <- H.newSized (length contents) :: ST s (HashTableC s String Int)
                      forM_ contents $ \line ->
                        H.insert h line (numOf2s line)
 
@@ -91,7 +91,7 @@ hashtableBasic = do
   contents <- allLines
   keys     <- getKeys contents
 
-  let x = runST $ do h <- H.new :: ST s (HashTableB s String Int)
+  let x = runST $ do h <- H.newSized (length contents) :: ST s (HashTableB s String Int)
                      forM_ contents $ \line ->
                        H.insert h line (numOf2s line)
 

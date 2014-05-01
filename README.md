@@ -3,8 +3,6 @@ testing-hastable-performance
 
 This is a repo to test out the performance between the [hashtables](https://hackage.haskell.org/package/hashtables) package and the HashMap from [unordered-containers](http://hackage.haskell.org/package/unordered-containers).
 
-On my OSX machine, the unordered-containers are consistently faster.
-
 Requirements: GHC v7.6.3, cabal-install >= 1.18
 
 ## To Run: ##
@@ -17,43 +15,46 @@ Requirements: GHC v7.6.3, cabal-install >= 1.18
 
     warming up
     estimating clock resolution...
-    mean is 1.022445 us (640001 iterations)
-    found 1098593 outliers among 639999 samples (171.7%)
-      500173 (78.2%) low severe
-      598420 (93.5%) high severe
+    mean is 1.037933 us (640001 iterations)
+    found 1082062 outliers among 639999 samples (169.1%)
+      484461 (75.7%) low severe
+      597601 (93.4%) high severe
     estimating cost of a clock call...
-    mean is 48.11101 ns (8 iterations)
+    mean is 47.92614 ns (8 iterations)
     found 1 outliers among 8 samples (12.5%)
       1 (12.5%) high severe
 
     benchmarking hashmap inserts
-    mean: 42.77249 ms, lb 42.23074 ms, ub 43.38054 ms, ci 0.950
-    std dev: 2.931284 ms, lb 2.550520 ms, ub 3.450863 ms, ci 0.950
-    variance introduced by outliers: 63.594%
+    mean: 41.05569 ms, lb 40.63234 ms, ub 41.57861 ms, ci 0.950
+    std dev: 2.395224 ms, lb 2.003822 ms, ub 2.907896 ms, ci 0.950
+    found 5 outliers among 100 samples (5.0%)
+      5 (5.0%) high mild
+    variance introduced by outliers: 56.456%
     variance is severely inflated by outliers
 
     benchmarking hashmap union
-    mean: 38.75604 ms, lb 38.25674 ms, ub 39.32312 ms, ci 0.950
-    std dev: 2.724852 ms, lb 2.382821 ms, ub 3.149132 ms, ci 0.950
-    variance introduced by outliers: 64.623%
+    mean: 37.28463 ms, lb 36.93987 ms, ub 37.76571 ms, ci 0.950
+    std dev: 2.068462 ms, lb 1.627835 ms, ub 2.992619 ms, ci 0.950
+    found 10 outliers among 100 samples (10.0%)
+      8 (8.0%) high mild
+      2 (2.0%) high severe
+    variance introduced by outliers: 53.464%
     variance is severely inflated by outliers
 
     benchmarking hashtable cuckoo
-    collecting 100 samples, 1 iterations each, in estimated 5.484390 s
-    mean: 50.78706 ms, lb 50.17328 ms, ub 51.44667 ms, ci 0.950
-    std dev: 3.252150 ms, lb 2.837077 ms, ub 3.812114 ms, ci 0.950
-    found 3 outliers among 100 samples (3.0%)
-      3 (3.0%) high mild
-    variance introduced by outliers: 60.535%
+    mean: 33.06717 ms, lb 32.74118 ms, ub 33.50915 ms, ci 0.950
+    std dev: 1.926578 ms, lb 1.502920 ms, ub 2.529431 ms, ci 0.950
+    found 11 outliers among 100 samples (11.0%)
+      8 (8.0%) high mild
+      3 (3.0%) high severe
+    variance introduced by outliers: 55.504%
     variance is severely inflated by outliers
 
     benchmarking hashtable basic
-    collecting 100 samples, 1 iterations each, in estimated 5.088615 s
-    mean: 52.46744 ms, lb 51.90874 ms, ub 53.06552 ms, ci 0.950
-    std dev: 2.986507 ms, lb 2.611857 ms, ub 3.462132 ms, ci 0.950
-    found 2 outliers among 100 samples (2.0%)
+    mean: 32.47539 ms, lb 32.17044 ms, ub 32.97786 ms, ci 0.950
+    std dev: 1.973697 ms, lb 1.343549 ms, ub 2.951638 ms, ci 0.950
+    found 10 outliers among 100 samples (10.0%)
       2 (2.0%) high mild
-    variance introduced by outliers: 54.488%
+      8 (8.0%) high severe
+    variance introduced by outliers: 58.477%
     variance is severely inflated by outliers
-
-
