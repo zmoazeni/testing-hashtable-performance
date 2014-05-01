@@ -13,6 +13,8 @@ Requirements: GHC v7.6.3, cabal-install >= 1.18
 
 ## Output of a local run ##
 
+When generating a test file with 1,000 rows:
+
     warming up
     estimating clock resolution...
     mean is 1.037933 us (640001 iterations)
@@ -58,3 +60,45 @@ Requirements: GHC v7.6.3, cabal-install >= 1.18
       8 (8.0%) high severe
     variance introduced by outliers: 58.477%
     variance is severely inflated by outliers
+
+
+When generating a test file with 10,000 rows:
+
+    warming up
+    estimating clock resolution...
+    mean is 1.010539 us (640001 iterations)
+    found 1093569 outliers among 639999 samples (170.9%)
+      497138 (77.7%) low severe
+      596431 (93.2%) high severe
+    estimating cost of a clock call...
+    mean is 52.42480 ns (8 iterations)
+
+    benchmarking hashmap inserts
+    collecting 100 samples, 1 iterations each, in estimated 48.86670 s
+    mean: 522.3153 ms, lb 519.1395 ms, ub 525.8395 ms, ci 0.950
+    std dev: 17.17178 ms, lb 15.04903 ms, ub 20.22974 ms, ci 0.950
+    found 1 outliers among 100 samples (1.0%)
+    variance introduced by outliers: 28.699%
+    variance is moderately inflated by outliers
+
+    benchmarking hashmap union
+    collecting 100 samples, 1 iterations each, in estimated 38.57639 s
+    mean: 462.2662 ms, lb 459.7906 ms, ub 464.8115 ms, ci 0.950
+    std dev: 12.80154 ms, lb 11.25117 ms, ub 14.87192 ms, ci 0.950
+    variance introduced by outliers: 21.922%
+    variance is moderately inflated by outliers
+
+    benchmarking hashtable cuckoo
+    collecting 100 samples, 1 iterations each, in estimated 43.26239 s
+    mean: 447.0243 ms, lb 444.8877 ms, ub 449.2720 ms, ci 0.950
+    std dev: 11.23811 ms, lb 10.02587 ms, ub 12.79464 ms, ci 0.950
+    variance introduced by outliers: 19.011%
+    variance is moderately inflated by outliers
+
+    benchmarking hashtable basic
+    collecting 100 samples, 1 iterations each, in estimated 39.41162 s
+    mean: 472.1487 ms, lb 469.6700 ms, ub 474.7883 ms, ci 0.950
+    std dev: 13.12306 ms, lb 11.57042 ms, ub 15.43980 ms, ci 0.950
+    found 1 outliers among 100 samples (1.0%)
+    variance introduced by outliers: 21.930%
+    variance is moderately inflated by outliers

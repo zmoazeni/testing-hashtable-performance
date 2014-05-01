@@ -1,3 +1,3 @@
 import HashTablesPerformance hiding (main)
 
-main = writeLargeFile 10000
+main = writeLargeFile 100000
